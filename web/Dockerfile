@@ -1,6 +1,6 @@
-FROM        java:8-jdk
+FROM        java:21-jdk
 
-ENV         JAVA_HOME         /usr/lib/jvm/java-8-openjdk-amd64
+ENV         JAVA_HOME         /usr/lib/jvm/java-21-openjdk-amd64
 ENV         GLASSFISH_HOME    /usr/local/glassfish4
 ENV         PATH              $PATH:$JAVA_HOME/bin:$GLASSFISH_HOME/bin
 
@@ -12,7 +12,7 @@ RUN         curl -L -o /tmp/glassfish-4.1.zip http://download.java.net/glassfish
             unzip /tmp/glassfish-4.1.zip -d /usr/local && \
             rm -f /tmp/glassfish-4.1.zip
 
-EXPOSE      8080 4848 8181
+EXPOSE      4444 8089 8181
 
 WORKDIR     /usr/local/glassfish4
 

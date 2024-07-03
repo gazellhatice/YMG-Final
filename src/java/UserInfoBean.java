@@ -1,14 +1,16 @@
-
-
 import jakarta.annotation.ManagedBean;
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.enterprise.context.SessionScoped;
+import jakarta.inject.Named;
+import java.io.Serializable;
 /**
  *
  * @author Matti
  */
-@ManagedBean(name = "userInfoBean", eager = true)
-@RequestScoped
-public class UserInfoBean {
+
+@Named(value = "userInfoBean")
+@SessionScoped
+public class UserInfoBean implements Serializable {
     private String name;
     private String address;
     private String email;
